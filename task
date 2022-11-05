@@ -1,0 +1,33 @@
+Question – Using Python v3.0:
+## Test get users API
+Host: https://reqres.in
+Path: /api/users
+Parameter: page
+Method: GET
+Target API:
+https://reqres.in/api/users?page=1
+Response:
+{&quot;page&quot;:1,&quot;per_page&quot;:3,&quot;total&quot;:12,&quot;total_pages&quot;:4,&quot;data&quot;:
+[{&quot;id&quot;:1,&quot;first_name&quot;:&quot;George&quot;,&quot;last_name&quot;:&quot;Bluth&quot;,&quot;avatar&quot;:&quot;https://s3.amazonaws.com/uifac
+es/faces/twitter/calebogden/128.jpg&quot;},
+{&quot;id&quot;:2,&quot;first_name&quot;:&quot;Janet&quot;,&quot;last_name&quot;:&quot;Weaver&quot;,&quot;avatar&quot;:&quot;https://s3.amazonaws.com/uifac
+es/faces/twitter/josephstein/128.jpg&quot;},
+{&quot;id&quot;:3,&quot;first_name&quot;:&quot;Emma&quot;,&quot;last_name&quot;:&quot;Wong&quot;,&quot;avatar&quot;:&quot;https://s3.amazonaws.com/uiface
+s/faces/twitter/olegpogodaev/128.jpg&quot;}]}
+This is an API that would return a list of user data in JSON format
+We can see the output as above. There are total 12 user data and all data are in 2 pages. Each
+page has 6 data
+You can use parameter &quot;page&quot; to specify the page of data
+Please use Python to write a function that given two numbers and return a list of the
+name(first_name + last_name) of the users whose ID is between this two numbers
+The result name list should be sorted according to the first name
+And then design the test cases to verify your functions
+e.g.
+assert get_user_full_name_list (1, 3) == [&#39;Emma Wong&#39;, &#39;George Bluth&#39;, &#39;Janet Weaver&#39;]
+assert get_user_full_name_list (5, 8) == [&#39;Charles Morris&#39;, &#39;Emma Wong&#39;, &#39;Eve Holt&#39;, &#39;Janet
+Weaver&#39;]
+Note:
+1. You NEED to set the header User-Agent to &quot;&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36&quot;
+so that you can get the data correctly.
+2. Both two input parameters should be integer. For any invalid input, return an empty list
